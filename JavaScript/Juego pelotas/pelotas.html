@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pelotas.css">
+    <script src="pelotas.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <h2 id="temp">00:00:00</h2>
+        <section>
+            <div id="acierto">0</div>
+            <div id="fallo">0</div>
+        </section>
+
+    </header>
+    <main id="campo">
+        
+    </main>
+    <footer>
+        <form>
+
+            <br><label for="cantidad">Selecciona el número de pelotas</label><br>
+            <select name="cantidad" id="cantidad">
+                <option value="10" selected>10</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+            </select><br>
+
+            <label for="modo" required>Elige el modo:</label><br>
+            <input type="button" class="modo" id="modo1" value="Eliminar todas las pelotas">
+            <input type="button" class="modo" id="modo2" value="Eliminar un solo color"><br>
+            <button type="button" id="jugar">Jugar</button>
+        </form>
+    </footer>
+
+</body>
+
+</html>

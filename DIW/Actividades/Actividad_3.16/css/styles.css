@@ -1,0 +1,126 @@
+body {}
+
+.grid-container {
+    display: grid;
+    height: 650px;
+    grid-template-areas:
+        'title1 title1 title1 title1'
+        'img1 img2 img4 img5'
+        'img1 img3 img4 img6'
+        'title2 title2 title2 title2'
+        'img7 img8 img9 .'
+        'img10 img11 . .'
+        'img12 . . .';
+    grid-template-rows: 10% 16% 16% 10% 16% 16% 16%;
+
+    justify-content: center;
+}
+
+.grid-item {
+    border: 1px solid black;
+    width: 150px;
+    margin: 2px;
+
+}
+
+.title {
+    font-size: 24px;
+}
+
+#title1 {
+    grid-area: title1;
+    width: 100%;
+    border: none;
+
+}
+
+#title2 {
+    grid-area: title2;
+    width: 100%;
+    border: none;
+}
+
+#img1 {
+    grid-area: img1;
+    background-image: url('../imgs/mujer-libro.jpeg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+#img2 {
+    grid-area: img2;
+    background-image: url('../imgs/sol.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img3 {
+    grid-area: img3;
+    background-image: url('../imgs/zapatillas.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img4 {
+    grid-area: img4;
+    background-image: url('../imgs/mar.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img5 {
+    grid-area: img5;
+    background-image: url('../imgs/cafe.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img6 {
+    grid-area: img6;
+    background-image: url('../imgs/skate.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img7 {
+    grid-area: img7;
+    background-image: url('../imgs/edificios.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img8 {
+    grid-area: img8;
+    background-image: url('../imgs/reunion.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img9 {
+    grid-area: img9;
+    background-image: url('../imgs/mujer-bici.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img10 {
+    grid-area: img10;
+    background-image: url('../imgs/delfines.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img11 {
+    grid-area: img11;
+    background-image: url('../imgs/pintura.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img12 {
+    grid-area: img12;
+    background-image: url('../imgs/libros.jpeg');
+    background-size: cover;
+    background-position: center;
+}

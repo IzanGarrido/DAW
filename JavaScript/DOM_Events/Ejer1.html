@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <script>
+
+        function comprobar_nombre() {
+            let nombre = document.getElementById('nombre').value;
+            if (nombre.length > 15) {
+                alert("Nombre demasiado largo!")
+            }
+            let arr = nombre.split('')
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].match(/^[0-9]$/)) {
+                    /*alert("El nombre no contiene números!")*/
+                    document.getElementById("name").style.color = "red";
+
+
+                }
+
+            }
+
+        }
+
+        function comprobar_email() {
+            let email = document.getElementById('email').value;
+            let comprobar = /^\w+@\w+(.\w+)*$/;
+            if (!comprobar.test(email)) {
+                document.getElementById("mail").style.color = "red";
+            }
+
+
+        }
+
+        function comprobar_dni() {
+            let dni = document.getElementById('dni').value;
+            let comprobar = /^\d{8}[A-Za-z]$/;
+            let cadena = "TRWAGMYFPDXBNJZSQVHLCKET";
+            let dninum = parseInt(dni);
+            let posicion = dninum % (cadena.length - 1);
+
+            if (!comprobar.test(dni)) {
+                document.getElementById("nif").style.color = "red";
+            }
+
+            if (comprobar.test(dni)) {
+                if (cadena[posicion].toLowerCase() != (dni[dni.length - 1]).toLowerCase()) {
+                    document.getElementById("nif").style.color = "red";
+                }
+            }
+
+        }
+
+        function comprobar() {
+
+            let nombre = document.getElementById("nombre").value;
+            let email = document.getElementById("email").value;
+            let dni = document.getElementById("dni").value;
+            if (nombre == "") return alert("Existen campos vacíos en el formulario");
+            if (email == "") return alert("Existen campos vacíos en el formulario");
+            if (dni == "") return alert("Existen campos vacíos en el formulario");
+            comprobar_nombre();
+            comprobar_email();
+            comprobar_dni();
+            copiar();
+        }
+
+        function copiar() {
+            let nombre = document.getElementById("nombre").value;
+            let dni = document.getElementById("dni").value;
+            let email = document.getElementById("email").value;
+            let datos = nombre + " con DNI " + dni + " e e-mail " + email;
+            let nodoPadre = document.getElementById("listado");
+            let parrafo = document.createElement("p");
+            let texto = document.createTextNode(datos);
+            parrafo.appendChild(texto);
+            nodoPadre.appendChild(parrafo);
+
+        }
+
+    </script>
+
+</head>
+
+<body style="background-color: lightblue;">
+
+    <form>
+
+        <label for="nombre" id="name">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="email" id="mail">e-mail:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="dni" id="nif">DNI:</label>
+        <input type="text" id="dni" name="dni" required ><br>
+
+        <button type="button" onclick="comprobar()">Copiar</button>
+
+    </form>
+
+    <div id="listado">
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+* {
+  font-family: arial;
+}
+
+.uno {
+  width: 800px;
+}
+.uno h1 {
+  color: green;
+  font-size: 22px;
+  text-align: center;
+}
+.uno p {
+  font-size: 14px;
+}
+
+.dos {
+  width: 800px;
+}
+.dos h1 {
+  color: blue;
+  font-size: 22px;
+  text-decoration: underline;
+}
+.dos p:first-of-type {
+  font-size: 14px;
+  text-align: left;
+}
+.dos p:first-of-type::first-line {
+  font-style: italic;
+}
+.dos p {
+  font-size: 14px;
+  text-align: right;
+}
+
+/*# sourceMappingURL=styles.css.map */

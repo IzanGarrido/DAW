@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <script type="text/javascript">
+
+        function comprobar_dni(dni) {
+            let comprobar = /^\d{8}[A-Za-z]$/;
+
+            let cadena = "TRWAGMYFPDXBNJZSQVHLCKET";    
+            let dninum = parseInt(dni);     
+            let posicion = dninum % (cadena.length - 1);
+
+            if (cadena[posicion].toLowerCase() == dni[dni.length-1]) {
+                return comprobar.test(dni);
+            }
+
+        }
+
+        function comprobar_email(email) {
+            let comprobar = /^\w+@\w+(.\w+)*$/;
+            return comprobar.test(email);
+
+
+
+        }
+
+        function comprobar_tlf(tlf) {
+            let comprobar = /^[0-9]{9}$/;
+            return comprobar.test(tlf);
+
+
+        }
+
+        function comprobar_ip(ip) {
+            let comprobar = /^([0-255]{1,3}).([0-255]{1,3}).([0-255]{1,3}).([0-255]{1,3})$/;
+            return comprobar.test(ip);
+
+
+        }
+
+        function comprobar_url(url) {
+            let comprobar = /^http[s]?:\/|\/\w+.w+$/;
+            return comprobar.test(url);
+
+
+        }
+
+        let dni = prompt("Dame el dni");
+        let email = prompt("Dame el email");
+        let tlf = prompt("Dame el tlf");
+        let ip = prompt("Dame la IP");
+        let url = prompt("Dame la URL");
+
+        document.write("DNI " + comprobar_dni(dni))
+        document.write("<br>Email " + comprobar_email(email))
+        document.write("<br>Teléfono " + comprobar_tlf(tlf))
+        document.write("<br>IP " + comprobar_ip(ip))
+        document.write("<br>URL     " + comprobar_url(url))
+
+        
+
+    </script>
+
+</head>
+
+<body style="background-color: lightblue;">
+
+</body>
+
+</html>

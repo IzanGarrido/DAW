@@ -1,0 +1,109 @@
+/* Estilos generales para el formulario en pantallas pequeñas (max-width: 475px) */
+@media all and (max-width: 475px) {
+    /* Estilos para el formulario */
+    main form {
+        border-image: none !important; /* Eliminar imagen de borde */
+        border: none !important; /* Eliminar borde */
+        flex-direction: column; /* Cambio de dirección de los elementos a columna */
+        padding: 10px; /* Espaciado general */
+        padding-bottom: 20px; /* Espaciado inferior */
+        align-items: center !important; /* Centrar los elementos */
+        height: auto !important; /* Ajustar altura automáticamente */
+        width: auto !important; /* Ajustar ancho automáticamente */
+        padding-block: 30px; /* Espaciado en el bloque vertical */
+    }
+
+    /* Estilos para los campos de texto */
+    .write {
+        width: 200px !important; /* Ancho del campo */
+        height: 40px !important; /* Alto del campo */
+        border: 2px solid gray; /* Borde gris */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 10px; /* Espaciado interno */
+        transition: all 0.3s ease-in-out; /* Animación para transiciones */
+    }
+
+    /* Estilos para el botón de envío */
+    #enviar {
+        width: 200px !important; /* Ancho del botón */
+        height: 40px !important; /* Alto del botón */
+        margin-top: 20px; /* Espaciado superior */
+    }
+}
+
+/* Estilos para el formulario principal */
+main {
+    grid-column: 1 / 5; /* Colocación en la cuadrícula */
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+/* Estilos para el formulario en pantallas grandes */
+main form {
+    border-style: solid; /* Borde sólido */
+    border-image: url(../media/images/borde-switch.png); /* Imagen del borde */
+    border-image-slice: 30 80 30 80; /* Desglose de la imagen del borde */
+    border-image-width: 50px 140px 50px 140px; /* Ancho del borde */
+    display: flex; /* Usar flexbox */
+    justify-content: space-evenly; /* Distribuir el contenido de manera uniforme */
+    width: 800px; /* Ancho del formulario */
+    height: 300px; /* Alto del formulario */
+    padding-block: 50px; /* Espaciado vertical interno */
+}
+
+/* Estilos para las secciones dentro del formulario */
+main form section {
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Organizar los elementos en columna */
+    justify-content: space-between; /* Espaciado entre los elementos */
+    align-items: center; /* Centrar los elementos */
+}
+
+/* Estilos para los campos de entrada de texto */
+.write {
+    width: 250px; /* Ancho de los campos */
+    height: 50px; /* Alto de los campos */
+    border: 2px solid gray; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    transition: all 0.3s ease-in-out; /* Animación para transiciones */
+}
+
+/* Animación al enfocarse en el campo de entrada */
+.write:focus {
+    outline: none; /* Quitar el borde azul predeterminado */
+    border-color: blue; /* Cambiar el color del borde a azul */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Añadir sombra azul */
+    transform: scale(1.05); /* Agrandar ligeramente el campo */
+}
+
+/* Estilos para entradas válidas (formato correcto) */
+.write:valid {
+    border-color: green; /* Borde verde */
+    background-color: #e7f7e7; /* Fondo verde claro */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Sombra verde */
+}
+
+/* Estilos para entradas no válidas (formato incorrecto) */
+.write:invalid {
+    border-color: red; /* Borde rojo */
+    background-color: #fde7e7; /* Fondo rojo claro */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra roja */
+}
+
+/* Estilos para el botón de envío */
+#enviar {
+    background-color: blue; /* Fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición para el cambio de color */
+}
+
+/* Estilos para el botón de envío al pasar el mouse */
+#enviar:hover {
+    background-color: darkblue; /* Fondo azul oscuro al pasar el mouse */
+}

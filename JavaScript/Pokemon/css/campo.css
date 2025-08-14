@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+}
+
+#app2 {
+    display: grid;
+    grid-template-columns: 15% 1fr 15%;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+
+}
+
+.background {
+    grid-area: 1 / 2 / 2 / 3;
+    background-image: url("../media/images/campo.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 80vh;
+    border : 3px solid black;
+    position: relative;
+    z-index: 2;
+}
+
+.left {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.right {
+    grid-area: 1 / 3 / 3 / 4;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+   
+}
+
+
+.abilities {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: rgb(180, 180, 180);
+    border: 3px solid black;
+    z-index: 2;
+}
+
+.pokemons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    border: 3px solid black;
+    cursor: default;
+
+}
+
+.info img{
+    cursor: pointer;
+  
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.barra-container {
+    margin-left: 2%;
+    width: 90%;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+}
+
+.barra {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.5s, background-color 0.5s;
+}
+
+.numero {
+    display: none;
+
+}
+
+.seleccionado {
+    background-color: rgb(255, 255, 0);
+}
+
+.abilities > div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+#aliado, #enemigo {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+#aliado button, #enemigo button {
+    width: auto;
+    height: 40px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    outline: none;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    position: relative;
+}
+
+#aliado button:hover::before, 
+#enemigo button:hover::before {
+    content: "▶";
+    position: absolute;
+    left: -25px;
+    top: 42%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    color: black;
+}
+
+.notoca {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+.notoca button {
+    width: auto;
+    height: 40px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    outline: none;
+    color: red;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    position: relative;
+}
+
+.ocupar {
+    width: 100%;
+    height: 100%;
+}
+
+.muerto {
+    z-index: 5;
+    opacity: 0.5;
+    background-color: red;
+    cursor: default;
+    pointer-events: none;
+}
+
+.modal {
+    padding: 50px;
+    position: fixed;
+    width: 300px;
+    box-shadow: 0px 0px 20px black;
+    border-radius: 15px;
+    height: 15%;
+    background-color: lightblue;
+    left: 40% ;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+
+.boton {
+    margin-top: 20px;
+    width: auto;
+    padding-inline: 10%;
+    height: 60px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.boton:hover {
+    background-color: lightgray;
+
+}
+
+.boton a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+
+
+}
+
+#music-toggle {
+    position: fixed;
+    top: 1%;
+    left: 16%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffcc00;
+    border: 2px solid #000;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#music-toggle:hover {
+    background-color: #ffdd33;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <script type="text/javascript">
+
+        function esfeliz(num) {
+            
+            for (let i = 0; i < 8; i++) {
+                parseInt(num);
+                let x = num
+                x = x.toString();
+                let arr = x.split("");
+
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i]= Math.pow(parseInt(arr[i]),2);
+                    
+                }
+                let suma = 0;
+                parseInt(suma);
+                for (let i = 0; i < arr.length; i++) {
+                    suma+= parseInt(arr[i]);
+                    
+                }
+                if (suma == 1) {
+                    return true
+                } else num = suma;
+
+            }
+            return false
+        }
+
+
+        let cont = 0;
+        let felices = [];
+        while (felices.length < 5) {
+            if (esfeliz(cont)) {
+                felices.push(cont);
+            }
+
+            cont++;
+        }
+
+        for (let i = 0; i < felices.length; i++) {
+            document.write(felices[i] + " ");
+
+        }
+
+    </script>
+
+</head>
+
+<body style="background-color: lightblue;">
+
+</body>
+
+</html>

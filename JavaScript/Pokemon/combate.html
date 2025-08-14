@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combate pokemon</title>
+    <link rel="stylesheet" href="css/campo.css">
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+    <div id="app2">
+        <button id="music-toggle" @click="toggleMusic">🎵</button>
+        <div class="left">
+            <div v-for="favorito in favoritos1" :key="favorito.id" class="pokemons" :id="favorito.id">
+                <div class="ocupar">
+                    <div class="barra-container">
+                        <div class="barra" id="barra-aliado" style="width: 100%;"></div>
+                        <div class="numero">{{favorito.stats[0].base_stat}}</div>
+                    </div>
+                    <div class="info">
+                        <p>{{ favorito.name}}</p>
+                        <img v-if="idally == null" :src="favorito.sprites.front_default" :id="favorito.id"
+                            @click="pokemonaliado($event)" @mouseover="sonido">
+                        <img v-else-if="idally != null && turno == 'aliado'"
+                            :src="favorito.sprites.front_default" :id="favorito.id" @click="cambiarpokemon('aliado')"
+                            @mouseover="sonido">
+                        <img v-else-if="idally != null && turno == 'enemigo'" :src="favorito.sprites.front_default"
+                            :id="favorito.id" @mouseover="sonido">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="background" id="background">
+        </div>
+        <div class="abilities">
+            <div v-if="idally != null && idenemigo != null">
+                <div id="aliado" v-if="turno == 'aliado'">
+                    <button v-for="ataque in ataques1" @mouseover="sonido"
+                        @click="usarAtaque(ataque.power, 'aliado')">{{ataque.names[5].name}}</button>
+                </div>
+                <div class="notoca" v-else>
+                    <button v-for="ataque in ataques1">{{ataque.names[5].name}}</button>
+                </div>
+
+                <div id="enemigo" v-if="turno == 'enemigo'">
+                    <button v-for="ataque in ataques2" @mouseover="sonido"
+                        @click="usarAtaque(ataque.power, 'enemigo')">{{ataque.names[5].name}}</button>
+                </div>
+                <div class="notoca" v-else>
+                    <button v-for="ataque in ataques2">{{ataque.names[5].name}}</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="right">
+            <div v-for="favorito in favoritos2" :key="favorito.id" class="pokemons" :id="favorito.id">
+                <div class="ocupar">
+                    <div class="barra-container">
+                        <div class="barra" id="barra-enemigo" style="width: 100%;"></div>
+                        <div class="numero">{{favorito.stats[0].base_stat}}</div>
+                    </div>
+                    <div class="info">
+                        <p>{{ favorito.name }}</p>
+                        <img v-if="idenemigo == null" :src="favorito.sprites.front_default" :id="favorito.id"
+                            @click="pokemonenemigo($event)" @mouseover="sonido">
+                        <img v-else-if="idenemigo != null && turno == 'enemigo'"
+                            :src="favorito.sprites.front_default" :id="favorito.id" @click="cambiarpokemon('enemigo')"
+                            @mouseover="sonido">
+                        <img v-else-if="idenemigo != null && turno == 'aliado'" :src="favorito.sprites.front_default"
+                            :id="favorito.id" @mouseover="sonido">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div v-if="this.totalesally == 0" class="modal">
+            <h1>HA GANADO J2</h1>
+            <button class="boton"><a href="index.html">Volver a jugar</a></button>
+        </div>
+
+        <div v-if="this.totalesenemigo == 0" class="modal">
+            <h1>HA GANADO J1</h1>
+            <button class="boton"><a href="index.html">Volver a jugar</a></button>
+        </div>
+
+        <audio id="background-music" loop>
+            <source src="media/audio/pokemon-battle.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <script src="js/combate.js"></script>
+    <script>
+        const mountedApp = app2.mount('#app2');
+    </script>
+
+</body>
+
+</html>

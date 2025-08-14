@@ -1,0 +1,56 @@
+// Variables de colores
+$verde : green;
+$azul : blue;
+
+// Variables de tipografias
+$arial : arial;
+
+// Variables de tamaños de fuentes
+$titulo : 22px;
+$parrafo : 14px;
+
+// Anidación
+
+* {
+  font-family: $arial;
+}
+
+.uno {
+  width: 800px;
+
+  h1 {
+    color: $verde;
+    font-size: $titulo;
+    text-align: center;
+  }
+
+  p {
+    font-size: $parrafo;
+  }
+
+}
+
+.dos {
+  width: 800px;
+
+  h1 {
+    color: $azul;
+    font-size: $titulo;
+    text-decoration: underline;
+  }
+
+  & p:first-of-type {
+    font-size: $parrafo;
+    text-align: left;
+    
+
+    &::first-line {
+      font-style: italic;
+    }
+  }
+
+  p {
+    font-size: $parrafo;
+    text-align: right;
+  }
+}

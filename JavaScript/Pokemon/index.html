@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elección</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+
+<body>
+    <div id="app">
+
+        <button id="music-toggle" @click="toggleMusic">🎵</button>
+
+        <div class="pokeball">
+            <button class="boton-rojo" @click="modal(1)" @mouseover="sonido">J1</button>
+            <button class="boton-blanco" @click="modal(2)" @mouseover="sonido">J2</button>
+        </div>
+        <button v-if="this.favoritos[0].length == 5 && this.favoritos[1].length == 5 " id="jugar" @click="guardarlocal" @mouseover="sonido"><a href="combate.html">JUGAR</a></button>
+
+        <div id="fondo" class="oculto">
+
+        </div>
+
+        <div id="modal" class="oculto">
+            <div id="equipo">
+                <div v-for="favorito in allfavoritos" :key="favorito.id" @click="quitarpokemon" @mouseover="sonido">
+                    <img :src="favorito.sprites.front_default" :id="favorito.id">
+
+                </div>
+            </div>
+
+            <div v-for="pokemon in allPokemons" :key="pokemon.id" class="imagen" id="imagen">
+                <img :src=pokemon.sprites.front_default :id="pokemon.id" @click="elegirpokemons" @mouseover="sonido">
+                <p>{{ pokemon.name }} </p>
+
+            </div>
+
+        </div>
+
+
+        <audio id="background-music" loop>
+            <source src="media/audio/pokemon-theme.m4a" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        const mountedApp = app.mount('#app');
+    </script>
+</body>
+
+</html>

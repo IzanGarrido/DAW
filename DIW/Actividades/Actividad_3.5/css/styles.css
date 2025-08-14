@@ -1,0 +1,103 @@
+body {
+    background: cadetblue;
+    width: 1000px;
+    margin: auto;
+}
+
+header {
+    border-bottom: 1px solid black
+}
+h2 {
+    text-align: center;  
+}
+
+#contenedor {
+    background-color: white;
+    padding: 20px;
+    margin-block: 20px;
+}
+
+#bloque1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+#caja1{
+    border-radius: 20px 30px 10px 50px;
+
+}
+#caja2{
+    border-radius: 5px;
+
+}
+#caja3{
+    border-radius: 30px / 30px;
+    background: linear-gradient(to bottom, #FFFFFF, gray);
+}
+#caja4{
+    border-radius: 30px / 30px;
+    background:radial-gradient(#FFFFFF 50%, gray);  
+
+}
+#caja5{
+    border-radius: 50px / 50px;
+
+}
+
+#caja7{
+    border-radius: 30px / 30px;
+    box-shadow: 5px 5px 10px rgb(150,150,150);
+}
+#caja8{
+    border-radius: 30px / 30px;
+
+}
+#caja9{
+    border-radius: 30px / 30px;
+    text-shadow: 5px 5px 5px rgb(150,150,150); 
+
+}
+#caja10{
+    border-radius: 30px / 30px;
+    background: linear-gradient(30deg, #FFFFFF , gray 100%);
+
+
+}
+
+
+.cajasP {
+    display: flex;
+    border: 1px solid black;
+    width: 220px;
+    height: 60px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family:black;
+}
+
+#bloque2 {
+    margin: auto;
+
+}
+
+.cajasG {
+    border: 1px solid black;
+    width: 900px;
+    height: 60px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family:black;
+
+}
+
+footer {
+    border-top: 1px solid black
+
+}

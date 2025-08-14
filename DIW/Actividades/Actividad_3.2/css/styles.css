@@ -1,0 +1,34 @@
+table,
+th,
+td {
+    border: 1px solid #333;
+    border-collapse: collapse;
+    font-family: Arial;;
+    
+}
+
+th {
+    background-image: url(../imgs/fondo_gris.gif);
+}
+
+th,td {
+    text-align: center;
+   justify-content: center;
+}
+
+td img {
+    float: left;
+    
+}
+
+tr:nth-child(even) {
+    background-color: #FFFFCC;
+}
+
+td:hover {
+    background-color: #FFFF66;
+}
+.cabecera {
+    text-align: left;
+
+}

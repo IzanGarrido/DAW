@@ -1,0 +1,173 @@
+/* Todo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #00796b;
+    color: white;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#temp {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 15px;
+}
+
+header div {
+    width: 100px;
+    height: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    border-radius: 10px;
+}
+
+#acierto {
+    background-color: #4caf50;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#fallo {
+    background-color: #e53935;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Main */
+main {
+    background-color: #ffffff;
+    height: 400px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ;
+}
+
+/* Mensaje */
+.mensaje-en-campo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    z-index: 1000;
+    text-align: center;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Labels y Selects */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #00796b;
+    font-weight: bold;
+}
+
+select, .modo, #jugar {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modos */
+.modo {
+    background-color: #b2dfdb;
+    color: #004d40;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.modo:hover {
+    background-color: #00796b;
+    color: white;
+}
+
+.color-modo {
+    background-color: #00796b;
+    color: white;
+}
+
+/* Botón jugar*/
+#jugar {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#jugar:hover {
+    background-color: #43a047;
+}
+
+/* Pelotas */
+.pelota {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.pelota:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Colores */
+.rojo { background-color: #ff5252; }
+.verde { background-color: #4caf50; }
+.azul { background-color: #2196f3; }
+.morado { background-color: #9c27b0; }
+.amarillo { background-color: #ffc107; }

@@ -1,0 +1,265 @@
+/* Fuentes importadas: */
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Londrina+Sketch&family=Luckiest+Guy&display=swap');
+
+/* Estilos para la página */
+main {
+    background: linear-gradient(to bottom, red, white);
+    height: 900px;
+    width: 1000px;
+    padding: 20px;
+    margin: auto;
+    font-family: 'abel';
+
+}
+/* Estilos de la cabecera de la pagina*/
+header {
+    font-family: 'Luckiest Guy';
+    display: flex;
+    background: linear-gradient(to bottom, #6666d4, lightblue);
+    height: 6%;
+    border-bottom: 5px solid black;
+    padding: 10px;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 8px 5px 5px gray;
+
+}
+/* Estilo para el titulo de la cabecera de la pagina */
+h1 {
+    position: relative;
+    margin-left: 20px;
+    color: white;
+    bottom: 10px;
+}
+/* Estilos para la imagen de la cabecera*/
+h1 img{
+    position: relative;
+    top: 15px;
+    left: -10px;
+}
+/* Estilos de la barra navegadora de la pagina */
+#nav {
+
+    background: linear-gradient(to right,orange, yellow);
+    height: 14%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 8px 5px 5px gray;
+
+}
+/* Estilos para las cajas de la barra navegadora*/
+#nav div {
+    border-radius: 100%;
+
+}
+/* Estilos para el texto de la barra navegadora*/
+#nav div p {
+    color:lightseagreen;
+    font-family: 'Luckiest Guy';
+    font-size: 20px;
+    margin-top: 3px;
+
+}
+
+#nav div p a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px #f06529;
+}
+
+#nav div p a:hover {
+    transition: 0.5s;
+    text-shadow: 0px 0px 5px  #ff7e42;
+}
+
+/* Estilos existentes para nav */
+#nav {
+    background: linear-gradient(to right,orange, yellow);
+    height: 14%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 8px 5px 5px gray;
+}
+
+/* Estilos para el menú desplegable */
+#nav div {
+    position: relative;
+}
+
+#nav div ul {
+    position: absolute;
+    z-index: 2;
+    width: 120px;
+    text-align: center;
+    left: 50%;
+    margin-left: -60px;
+    top: 80%; /* Subido un poco */
+    padding: 0;
+    list-style-type: none;
+    background-color: #e34c26; /* Color base para todos los elementos */
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: none;
+}
+
+#nav div:hover ul {
+    display: block;
+}
+
+#nav div ul li {
+    padding: 12px;
+    transition: background-color 0.3s;
+}
+
+#nav div ul li:nth-child(odd) {
+    background-color: #f06529; /* Color para elementos impares */
+}
+
+#nav div ul li:hover {
+    background-color: #ff7e42; /* Color al pasar el ratón */
+}
+
+#nav div ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Flecha indicadora */
+#nav div:nth-child(2):hover > p::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #e34c26 transparent; /* Color del triángulo */
+}
+
+/* Ajustes para el enlace principal */
+#nav div p {
+    margin-bottom: 15px;
+}
+
+#nav div p a {
+    position: relative;
+}
+
+/* Mantén los estilos existentes para los enlaces principales */
+#nav p a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 5px white;
+}
+
+#nav p a:hover {
+    transition: 0.5s;
+    text-shadow: 2px 2px 0px red;
+}
+
+/* Ajuste para el primer y último elemento de la lista */
+#nav div ul li:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+#nav div ul li:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+/*Estilos de la sección principal de la pagina*/
+section {
+    position: relative;
+    background-color: white;
+    height: 70%;
+    border-bottom: 5px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    box-shadow: 8px 5px 5px gray;
+
+}
+
+.chincheta {
+    position: absolute;
+    background-image: url(../imgs/chincheta.png);
+    height: 49px;
+    width: 35px;
+    top: 10px;
+    z-index: 1;
+}
+/*Imagen superpuesta en el borde de la imagen*/
+#chincheta1{
+    position: absolute;
+    left: 238px;
+    
+
+}
+#chincheta2{
+    position: absolute;
+    left: 500px;
+
+    
+}
+#chincheta3{
+    position: absolute;
+    left: 755px;
+    
+}
+
+#primero {
+    transform: rotate(-2deg);
+}
+
+#tercero {
+    transform: rotate(2deg)
+}
+
+/* Estilos para los articulos de la sección */
+article {
+    background-color: white;
+    padding: 5px;
+    width: 240px;
+    margin-top: 30px;
+    border-style: solid;
+    border-width: 70px 20px 50px 20px;
+    border-image: url(../imgs/movil.png);
+    border-image-slice: 70 20 50 20;
+    
+}
+/* Estilos para el texto de los articulos */
+article p {
+    text-align: center;
+    font-size: 12px;
+    line-height: 25px;
+    
+}
+/* Estilos para los titulos de los articulos */
+h3 {
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 1px;
+    text-shadow: 2px 2px 4px;
+}
+/* Estilos para el pie de pagina */
+footer {
+    display: flex;
+    background: linear-gradient(to top, #6666d4, lightblue);
+    height: 6%;
+    text-align: center;
+    color: aliceblue;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 8px 5px 5px gray;
+
+}

@@ -1,0 +1,218 @@
+html {
+    scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, rgb(60, 60, 60), rgb(100, 100, 100));
+    color: whitesmoke;
+}
+
+.navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    
+}
+
+.nav-link {
+    color: whitesmoke;
+}
+
+.nav-link:hover {
+    color: blue;
+}
+
+.navbar-brand img {
+    padding: 0;
+    margin: 0;
+    height: 60px;
+    width: auto;
+    border-radius: 100%;
+    border: 1px solid gray;
+}
+
+.carousel-hero {
+    position: relative;
+}
+
+.carousel-hero .carousel-item {
+    height: 100vh;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-hero .carousel-caption {
+    bottom: 50%;
+    transform: translateY(50%);
+    padding: 0;
+    text-align: center;
+}
+
+.carousel-hero .carousel-indicators {
+    bottom: 50px;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.carousel-hero .carousel-caption {
+    z-index: 2;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.event-card {
+    transition: transform 0.3s;
+    border: .5px solid gray;
+
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+
+}
+
+.event-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgb(50,50,50);
+    border-top: .5px solid gray ;
+    color: whitesmoke;
+}
+
+.game-category {
+    background-color: rgb(50,50,50);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.game-category:hover {
+    background-color: rgb(100,100,100);
+}
+
+.member-card {
+    text-align: center;
+}
+
+.member-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.modal-content {
+    background-color: rgb(50,50,50);
+}
+
+.social-icons {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: black;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: white;
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover-effect {
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hover-translate {
+    transition: transform 0.3s ease;
+}
+
+.hover-translate:hover {
+    transform: translateY(-5px);
+}
+
+.btn-twitch { background: #3b5998; color: white; }
+.btn-reddit { background: #ff4500; color: white; }
+.btn-instagram { background: #e1306c; color: white; }
+.btn-discord { background: #7289da; color: white; }
+
+.bg-primary-soft {
+    background-color: rgba(59, 93, 255, 0.1);
+}
+
+form {
+    color: whitesmoke ;
+}
+
+.form-control {
+    background-color: rgb(50, 50, 50);
+    color:whitesmoke
+    
+}
+
+.form-control::placeholder {
+    color: rgb(245, 245, 245, .5);
+}
+
+.form-control:focus {
+    border-color: #3b5dff;
+    box-shadow: 0 0 0 0.25rem rgba(59, 93, 255, 0.25);
+}
+
+.map-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #3b5dff, #2ad1d8);
+    opacity: 0.1;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    z-index: -1;
+}
+
+.contact-info {
+    border:none;
+    background-color: rgb(50,50,50);
+    color: whitesmoke;
+
+}

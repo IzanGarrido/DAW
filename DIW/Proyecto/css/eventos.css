@@ -1,0 +1,69 @@
+/* Estilos para pantallas pequeñas (max-width: 475px) */
+@media all and (max-width: 475px) {
+
+    /* Estilos para el contenedor principal (main) */
+    main {
+        grid-column: 1 / 5; /* Se ocupa de la columna 1 a la columna 5 de la cuadrícula */
+    }
+
+    /* Estilos para las secciones */
+    section {
+        grid-template-areas: 'titulo imagen' /* Áreas de la cuadrícula: título a la izquierda, imagen a la derecha */
+                             'texto texto' !important; /* Texto ocupa todo el espacio inferior */
+        grid-template-columns: 50% 50% !important; /* Distribución de columnas al 50% */
+        margin: 5 !important; /* Margen exterior */
+        padding: 10 !important; /* Padding interno */
+    }
+
+    /* Estilos para la etiqueta figure dentro de la sección */
+    section figure {
+        width: 80px !important; /* Ancho fijo de la imagen */
+    }
+
+    /* Estilos para las imágenes dentro de figure */
+    section figure img {
+        height: 50px !important; /* Altura de la imagen */
+        width: auto; /* Ancho automático para mantener la proporción */
+    }
+
+    /* Ocultar el elemento aside en pantallas pequeñas */
+    aside {
+        display: none; /* No mostrar el aside */
+    }
+}
+
+/* Estilos generales para la sección */
+section {
+    padding-left: 20px; /* Espaciado izquierdo */
+    margin-bottom: 20px; /* Margen inferior */
+    border: 1px solid white; /* Borde blanco */
+    border-radius: 0px 35px 5px 50px; /* Bordes redondeados en las esquinas */
+    background-image: url(../media/images/background.jpg); /* Fondo de imagen */
+    display: grid; /* Usar grid para el layout */
+    grid-template-areas: 'titulo titulo' /* Áreas de la cuadrícula: título ocupa el espacio superior completo */
+                         'imagen texto'; /* Imagen a la izquierda y texto a la derecha */
+    grid-template-columns: 30% 70%; /* Columna de imagen ocupa el 30%, texto ocupa el 70% */
+}
+
+/* Estilos para el encabezado h1 en la sección */
+section h1 {
+    grid-area: titulo; /* Coloca el h1 en el área 'titulo' */
+}
+
+/* Estilos para la etiqueta figure dentro de la sección */
+section figure {
+    grid-area: imagen; /* Coloca la etiqueta figure en el área 'imagen' */
+    text-align: center; /* Centra el contenido dentro de figure */
+    width: 150px; /* Ancho de la figura */
+}
+
+/* Estilos para el artículo dentro de la sección */
+section article {
+    grid-area: texto; /* Coloca el artículo en el área 'texto' */
+}
+
+/* Estilos para las imágenes dentro de figure */
+section figure img {
+    height: 100px; /* Altura de la imagen */
+    width: auto; /* Ancho automático para mantener la proporción */
+}

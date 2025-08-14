@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('https://fonts.cdnfonts.com/s/12878/MinecraftRegular-Bmg3.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Minecraft', sans-serif;
+    position: relative;
+}
+
+.logo {
+    margin: 2rem 0;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+#videofondo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.boton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 250px;
+    background: #8B8B8B;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border: 4px solid #3F3F3F;
+    box-shadow: 4px 4px 0 #000;
+    transition: all 0.2s ease;
+    text-shadow: 2px 2px 0 #000;
+    letter-spacing: 2px;
+}
+
+.boton:hover {
+    background: #AFAFAF;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+.boton:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 #000;
+}
+
+@media (max-width: 768px) {
+    .boton {
+        width: 200px;
+        font-size: 1.2rem;
+    }
+    
+    .logo {
+        margin: 1rem 0;
+    }
+}

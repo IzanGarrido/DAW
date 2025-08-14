@@ -1,0 +1,345 @@
+/* Importación de fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap'); /* Fuente Pixelify Sans */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap'); /* Fuente Roboto Condensed */
+
+/* Estilos para pantallas pequeñas (max-width: 475px) */
+@media all and (max-width: 475px) {
+
+    /* Ajustes globales de tamaño de fuente */
+    * {
+        font-size: 18px; /* Establecer tamaño de fuente de 18px en todos los elementos */
+    }
+
+    /* Estilos para el encabezado (header) en pantallas pequeñas */
+    header {
+        margin: 5px !important; /* Ajustar el margen */
+        padding: 5px !important; /* Ajustar el padding */
+        flex-direction: column; /* Organizar los elementos del header en columna */
+    }
+
+    /* Estilos para el título (h1) dentro del header */
+    header h1 {
+        font-size: 40px; /* Reducir el tamaño de la fuente del título */
+        padding: 0 !important; /* Eliminar padding */
+    }
+    
+    nav {
+        flex-direction: column; /* Organizar los elementos de la navegación en columna */
+    }
+
+    /* Estilos para la barra de navegación (nav) en pantallas pequeñas */
+    nav ul {
+        flex-direction: column; /* Organizar los elementos de la navegación en columna */
+        align-items: center; /* Centrar los elementos horizontalmente */
+        display: none !important; /* Ocultar la lista de navegación */
+        overflow: hidden; /* Ocultar contenido que exceda el contenedor */
+        opacity: 0; /* Inicia invisible */
+        transition: opacity 0.8s ease-in-out; /* Suavizar la opacidad */
+    }   
+
+    /* Estilos para los enlaces de la barra de navegación */
+    nav > a { 
+        font-size: 30px; /* Aumentar tamaño de fuente */
+        display: block !important; /* Asegurar que el enlace sea un bloque */
+        text-align: center; /* Centrar el texto */
+        padding: 15px; /* Padding alrededor del enlace */
+        color: #fff; /* Color blanco */
+        border-radius: 40px; /* Bordes redondeados */
+        text-decoration: none; /* Eliminar subrayado */
+    }
+
+    /* Animación de deslizamiento para el menú */
+    @keyframes slideDown {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 500px; /* Ajusta según el contenido del menú */
+            opacity: 1;
+        }
+    }
+    
+    /* Activación del menú desplegado */
+    nav ul.desplegado { 
+        display: block !important;
+        list-style: none;
+        animation: slideDown 0.8s forwards; /* Animación para desplegar */
+    }
+
+    /* Estilos para los elementos de la lista dentro del menú desplegado */
+    nav ul.desplegado li { 
+        display: block !important; /* Asegurar que cada elemento sea un bloque */
+        text-align: center; /* Centrar el texto */
+    }
+
+    /* Estilos para los enlaces dentro del menú desplegado */
+    nav ul.desplegado li a { 
+        display: block !important; /* Asegurar que el enlace sea un bloque */
+        padding: 15px; /* Padding alrededor del enlace */
+    }
+
+    /* Ajustes para el contenedor principal (main) en pantallas pequeñas */
+    main {
+        padding: 0 !important; /* Eliminar padding */
+        margin: 0 !important; /* Eliminar margen */
+        font-size: 12px !important; /* Reducir el tamaño de fuente */
+    }
+
+    /* Estilos para el pie de página (footer) en pantallas pequeñas */
+    footer ul {
+        flex-direction: column; /* Organizar los elementos del footer en columna */
+    }
+
+}
+
+/* Estilos generales */
+* {
+    font-family: "Roboto Condensed", serif; /* Usar la fuente Roboto Condensed */
+    font-size: 22px; /* Establecer tamaño de fuente predeterminado */
+}
+
+body {
+    background-color: rgb(70, 70, 70); /* Fondo oscuro */
+    color: white; /* Color del texto blanco */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
+}
+
+/* Estilos para el contenedor de la cuadrícula */
+#grid-container {
+    display: grid; /* Usar grid para el layout */
+    background-color: rgb(70, 70, 70); /* Fondo oscuro */
+    padding: 10px 40px 60px 40px; /* Padding para el contenedor */
+    grid-template-areas:
+        'header header header header' /* Área para el header */
+        'nav nav nav nav' /* Área para la navegación */
+        'breadcrumbs breadcrumbs breadcrumbs breadcrumbs' /* Área para las migas de pan */
+        'main main main aside' /* Área para el contenido principal y sidebar */
+        'footer footer footer footer'; /* Área para el pie de página */
+    grid-template-rows: auto auto auto auto auto; /* Fila de alturas automáticas */
+    grid-template-columns: 1fr 1fr 85% 15%; /* Definir las proporciones de las columnas */
+}
+
+/* Estilos para el encabezado (header) */
+header {
+    grid-area: header; /* Colocar el header en el área 'header' */
+    text-align: center; /* Alinear el texto al centro */
+    display: flex; /* Usar flexbox para el layout */
+    align-items: center; /* Centrar los elementos en el eje transversal */
+    background: linear-gradient(90deg, rgba(230, 230, 230, 1) 0%, rgba(144, 144, 144, 1) 17%, rgba(118, 118, 118, 1) 61%, rgba(10, 10, 10, 1) 97%); /* Fondo degradado */
+    padding: 10px; /* Padding alrededor */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+/* Estilos para el título (h1) dentro del header */
+header h1 {
+    font-family: "Pixelify Sans", serif; /* Fuente personalizada para el título */
+    padding-left: 50px; /* Padding izquierdo */
+    font-size: 50px; /* Tamaño de fuente grande */
+}
+
+/* Estilos para el logo */
+.logo {
+    border-radius: 50%; /* Hacer el logo circular */
+    width: 100px; /* Ancho del logo */
+    height: 100px; /* Alto del logo */
+    margin-right: 20px; /* Margen a la derecha */
+}
+
+/* Animación de rotación al pasar el ratón sobre el logo */
+.logo:hover {
+    animation: rotar 1s; /* Animación de rotación */
+}
+
+/* Definir la animación de rotación */
+@keyframes rotar {
+    0% {
+        transform: rotate(0deg); /* Iniciar en 0 grados */
+    }
+    100% {
+        transform: rotate(-360deg); /* Rotar 360 grados */
+    }
+}
+
+/* Estilos para el texto del header */
+.header-text {
+    text-align: left; /* Alinear texto a la izquierda */
+    text-shadow: 2px 2px 5px black; /* Sombra de texto */
+}
+
+/* Estilos para la barra de navegación (nav) */
+nav {
+    grid-area: nav; /* Colocar en el área 'nav' */
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar los elementos */
+    align-items: center; /* Centrar en el eje transversal */
+    gap: 15px; /* Espacio entre elementos */
+    padding-block: 20px; /* Padding arriba y abajo */
+}
+
+nav > a {
+    display: none; /* Ocultar inicialmente los enlaces */
+}
+
+/* Estilos para los elementos de la lista en la navegación */
+nav ul {
+    list-style: none; /* Eliminar viñetas de la lista */
+    display: flex; /* Usar flexbox */
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 0; /* Eliminar padding */
+    margin: 0; /* Eliminar márgenes */
+}
+
+/* Estilos para los elementos de lista (li) en la navegación */
+nav ul li {
+    display: inline; /* Mostrar en línea */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+/* Efecto al pasar el ratón sobre los elementos de la lista */
+nav ul li:hover {
+    transform: scale(1.2); /* Aumentar el tamaño */
+}
+
+/* Estilos para los enlaces dentro de la navegación */
+nav ul li a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: white; /* Color del texto */
+    font-weight: bold; /* Negrita */
+    text-shadow: 3px 3px 4px black; /* Sombra de texto */
+}
+
+/* Estilos para las migas de pan (breadcrumbs) */
+.breadcrumbs {
+    grid-area: breadcrumbs; /* Colocar en el área 'breadcrumbs' */
+    list-style: none; /* Eliminar viñetas de la lista */
+    display: flex; /* Usar flexbox */
+    gap: 0.5rem; /* Espacio entre elementos */
+    font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    margin: 10px 0; /* Márgenes alrededor */
+    padding: 0; /* Eliminar padding */
+    align-items: center; /* Alinear verticalmente */
+    padding-left: 10px; /* Padding izquierdo */
+}
+
+/* Estilos para los elementos de lista (li) en las migas de pan */
+.breadcrumbs li {
+    display: inline; /* Mostrar en línea */
+}
+
+/* Estilos para los enlaces dentro de las migas de pan */
+.breadcrumbs li a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: white; /* Color blanco */
+}
+
+/* Estilos para los separadores '>' entre los elementos de las migas de pan */
+.breadcrumbs li::after {
+    content: ">"; /* Separador */
+    margin: 0 0.5rem; /* Espacio alrededor */
+    color: #ccc; /* Color del separador */
+}
+
+/* Eliminar el separador '>' en el último elemento de las migas de pan */
+.breadcrumbs li:last-child::after {
+    content: "";
+}
+
+/* Estilos para el último elemento de las migas de pan */
+.breadcrumbs li:last-child {
+    color: #ccc; /* Color gris */
+}
+
+/* Estilos para el contenido principal (main) */
+main {
+    grid-area: main; /* Colocar en el área 'main' */
+    padding: 20px; /* Padding alrededor */
+    background-color: rgb(120, 120, 120); /* Fondo gris */
+    border-radius: 20px; /* Bordes redondeados */
+    margin-right: 10px; /* Margen a la derecha */
+    box-shadow: inset 0 0 10px black; /* Sombra interna */
+}
+
+/* Estilos para el sidebar (aside) */
+aside {
+    grid-area: aside; /* Colocar en el área 'aside' */
+    border: 1px solid white; /* Borde blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 20px; /* Padding alrededor */
+    box-shadow: 5px 5px 0px rgba(70, 70, 70, 0.8), 6px 6px 0px white; /* Sombras */
+    background-color: rgb(50, 50, 50); /* Fondo oscuro */
+    position: sticky; /* Hacer que el aside sea pegajoso */
+    top: 0; /* Fijarlo en la parte superior */
+    height: 440px; /* Altura fija */
+}
+
+/* Estilos para los elementos de la lista dentro del aside */
+aside ul li {
+    margin-bottom: 5px; /* Margen inferior */
+    list-style: none; /* Eliminar viñetas */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el ratón sobre los elementos de la lista en el aside */
+aside ul li:hover {
+    transform: scale(1.2); /* Aumentar el tamaño */
+}
+
+/* Estilos para los enlaces dentro del aside */
+aside ul li a:hover {
+    transform: scale(1.2); /* Aumentar el tamaño al hacer hover */
+    color: rgb(244, 245, 240); /* Cambiar el color */
+}
+
+/* Estilos para los enlaces dentro del aside */
+aside ul li a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: rgb(220, 220, 220); /* Color claro */
+}
+
+/* Estilos para el pie de página (footer) */
+footer {
+    grid-area: footer; /* Colocar en el área 'footer' */
+    text-align: center; /* Alinear texto al centro */
+    padding: 20px; /* Padding alrededor */
+    margin-top: 20px; /* Márgen superior */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.5); /* Sombra */
+    background: linear-gradient(90deg, rgba(10, 10, 10, 1) 0%, rgba(118, 118, 118, 1) 17%, rgba(144, 144, 144, 1) 61%, rgba(230, 230, 230, 1) 97%); /* Fondo degradado */
+}
+
+/* Estilos para los enlaces dentro del footer */
+footer a {
+    color: white; /* Color blanco */
+}
+
+/* Estilos para la lista dentro del footer */
+footer ul {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0; /* Eliminar padding */
+    margin: 10px 0 0 0; /* Márgenes */
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar los elementos */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+/* Estilos para los elementos de la lista dentro del footer */
+footer ul li {
+    display: inline; /* Mostrar en línea */
+}
+
+/* Estilos para los enlaces dentro de la lista del footer */
+footer ul li a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: white; /* Color blanco */
+    font-weight: bold; /* Negrita */
+}
+
+/* Estilos para las imágenes dentro de la lista del footer */
+footer ul li a img {
+    border-radius: 100%; /* Hacer la imagen circular */
+    height: 40px; /* Establecer altura */
+    width: auto; /* Ajustar el ancho automáticamente */
+}

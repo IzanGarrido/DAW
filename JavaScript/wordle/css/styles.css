@@ -1,0 +1,137 @@
+body {
+    font-family:Arial;
+    background: rgb(34, 34, 34);
+    
+    
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    background: rgb(34, 34, 34);
+
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+#tabla1 {
+    margin-inline: 10%;
+    th {
+        border: 1px solid black;
+        border-radius: 20%;
+        height: 50px;
+        width: 50px;
+        border-color: rgb(200, 200, 200);
+        color: white;
+        font-size: 24px;
+        text-shadow: 2px 2px 2px black;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        
+    }
+}
+
+#tabla2 {
+    margin-inline: 10%;
+
+    th {
+        border: 1px solid black;
+        border-color: rgb(200, 200, 200);
+
+        border-radius: 20%;
+        height: 50px;
+        width: 40px;      
+        color:white;
+  
+    }
+    
+}
+
+.hover {
+    th:hover {
+    cursor:default ;
+    background: rgba(144, 144, 144, 0.4);
+    }
+}
+
+.celda-activa {
+    background-color: rgba(200, 200, 200, 0.8);
+    border-color: blue;
+}
+.coincide {
+    background-color:green;
+}
+
+.esta {
+    background-color:orange;
+}
+
+.NoEsta  {
+    background-color:black;
+}
+
+.congelar {
+    z-index: 10000;
+    
+}
+
+/* Animación para que el mensaje aparezca de forma suave (fade in) */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clase que aplica la animación */
+.mensaje-animado {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    font-size: 24px;
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#mensaje {
+    font-size: 20px;
+    margin-top: 20px;
+    color: green;
+    text-align: center;
+}
+
+.boton-reiniciar {
+    margin-left: 5px;
+    background: lightgray;
+    border-style: none;
+}
+
+.boton-reiniciar:hover {
+    background: gray;
+}
+
+@keyframes crecer {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Crece un poco */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.celda-animada {
+    animation: crecer 0.2s ease-in-out;
+}

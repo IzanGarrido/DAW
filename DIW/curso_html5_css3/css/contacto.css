@@ -1,0 +1,139 @@
+@media (max-width: 1024px) {
+    #contenedorFormulario {
+        margin: 4%;
+        width: 58%;
+        padding: 2% 4%;
+    }
+
+    #contenedorFormulario h1 {
+        position: static;
+        padding: 0% 1%;
+        margin: 2% 0% 0% 0%;
+    }
+
+    input:not([type="submit"]) {
+        height: 5%;
+        width: 55%;
+    }
+
+    input:not([type="submit"]):focus {
+        width: 61%;
+    }
+
+    textarea {
+        width: 75%;
+    }
+
+    input[type="submit"] {
+        display: block; /* Mostrar como elemento en bloque */
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Aguafina+Script&family=Londrina+Sketch&family=Luckiest+Guy&display=swap');
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Abel', sans-serif;
+    background: url('../imgs/fondoForm.jpg') no-repeat -220px center/cover;
+    min-height: 100vh;
+}
+
+/* Contenedor del formulario */
+#contenedorFormulario {
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+    width: 600px;
+    padding: 20px 50px;
+    background: rgba(200, 200, 200, 0.7);
+    text-align: left;
+    box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Título del formulario */
+#contenedorFormulario h1 {
+    height: 30px;
+    position: absolute;
+    top: -16px;
+    left: 490px;
+    bottom: 100px;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: 'Aguafina Script', cursive;
+    color: #333;
+    letter-spacing: 5px;
+    text-shadow: 0px 0px 2px #777;
+    margin: 0;
+    padding: 0 10px;
+}
+
+/* Estilos comunes para los campos del formulario */
+form input, form textarea {
+    display: inline-block;
+    width: 330px;
+    padding: 10px 10px 10px 40px; /* Ajusta el padding izquierdo para dar espacio a la imagen */
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3), inset 0px 0px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in;
+    font-weight: bold;
+}
+
+/* Estilos de enfoque para los campos de nombre y correo */
+form input:focus {
+    width: 370px;
+    box-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
+}
+
+/* Iconos en los campos de nombre y correo */
+#nombre {
+    background: url('../imgs/icon-nombre.png') no-repeat 10px center;
+    background-size: 20px; /* Ajusta el tamaño del icono */
+}
+
+#email {
+    background: url('../imgs/icon-correo.png') no-repeat 10px center;
+    background-size: 20px; /* Ajusta el tamaño del icono */
+}
+
+/* Ajuste del textarea */
+form textarea {
+    height: 150px;
+    width: 90%;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    padding: 10px 10px 10px 40px; /* Ajusta el padding izquierdo para dar espacio a la imagen */
+    background: url('../imgs/icon-mensaje.png') no-repeat 10px 10px;
+    background-size: 20px; /* Ajusta el tamaño del icono */
+}
+
+form textarea:focus {
+    box-shadow: 0px 0px 12px rgba(255, 255, 255, 1);
+}
+
+/* Botón enviar */
+form button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    background: linear-gradient(to bottom, #5e5e5e, #2a2a2a);
+    border: 1px solid #434343;
+    box-shadow: inset 0px 1px 1px #353535;
+    cursor: pointer;
+    transition: background 0.3s ease-in;
+}
+
+form button:hover {
+    background: linear-gradient(to top, #5e5e5e, #2a2a2a);
+}
+
+/* Validaciones para el formulario */
+form input:required + label:after {
+    content: '*';
+    color: red;
+    margin-left: 5px;
+}

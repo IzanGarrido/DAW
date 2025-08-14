@@ -1,0 +1,2 @@
+Me falta hidden para tamaño
+comentarios en el html

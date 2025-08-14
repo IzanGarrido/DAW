@@ -1,0 +1,69 @@
+/* Estilos para pantallas pequeñas (max-width: 475px) */
+@media all and (max-width: 475px) {
+
+    /* Estilos para las secciones en pantallas pequeñas */
+    section {
+        flex-direction: column; /* Organizar los elementos en columna */
+        margin: 5px !important; /* Márgenes de 5px */
+        padding: 5px !important; /* Padding de 5px */
+    }
+
+    /* Estilos para las imágenes dentro de figure en pantallas pequeñas */
+    section figure img {
+        height: 100px !important; /* Altura de la imagen */
+        width: 150px !important; /* Ancho de la imagen */
+    }
+}
+
+/* Estilos generales para el contenedor principal (main) */
+main {
+    grid-column: 1 / 5; /* El contenedor ocupa de la columna 1 a la columna 5 */
+    display: grid; /* Usar grid para el layout */
+    grid-template-areas: 'section1' /* Definir área 'section1' */
+                         'section2' /* Definir área 'section2' */
+                         'section3'; /* Definir área 'section3' */
+}
+
+/* Estilos para la sección #section1 */
+#section1 {
+    grid-area: section1; /* Colocar la sección en el área 'section1' */
+    justify-content: center; /* Centrar el contenido */
+    text-align: center; /* Alinear el texto al centro */
+    border: 3px solid white; /* Borde blanco de 3px */
+    border-radius: 100px; /* Bordes redondeados con radio de 100px */
+    background: linear-gradient(to bottom, black, gray); /* Fondo degradado de negro a gris */
+}
+
+/* Estilos para la sección #section2 */
+#section2 {
+    grid-area: section2; /* Colocar la sección en el área 'section2' */
+}
+
+/* Estilos para la sección #section3 */
+#section3 {
+    grid-area: section3; /* Colocar la sección en el área 'section3' */
+}
+
+/* Estilos comunes para las secciones #section2 y #section3 */
+#section2,
+#section3 {
+    padding: 20px; /* Padding de 20px */
+    border: 3px solid white; /* Borde blanco de 3px */
+    border-radius: 40px 40px 5px 5px; /* Bordes redondeados con diferentes radios */
+    align-items: center; /* Centrar los elementos dentro */
+    background-color: gray; /* Fondo gris */
+}
+
+/* Estilos generales para las secciones */
+section {
+    display: flex; /* Usar flexbox para el layout */
+    margin-bottom: 40px; /* Margen inferior de 40px */
+    margin-inline: 60px; /* Margen horizontal de 60px */
+}
+
+/* Estilos para las imágenes dentro de figure */
+section figure img {
+    height: 300px; /* Altura de las imágenes */
+    width: 400px; /* Ancho de las imágenes */
+    border-radius: 10px; /* Bordes redondeados con radio de 10px */
+}

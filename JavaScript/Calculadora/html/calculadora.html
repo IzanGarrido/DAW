@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>calculadora</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/calculadora.css  " />
+    <script src="../js/calculadora.js"></script>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div class="pantalla">
+            <input id="texto" type="text" maxlength="12" value="" disabled>
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="c(this.innerText)">
+            C
+
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="porcentaje()">
+            %
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="borrar()">
+            &laquo;
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="operacion(this.innerText)">
+            /
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            7
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            8
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            9
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="operacion(this.innerText)">
+            *
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            4
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            5
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            6
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="operacion(this.innerText)">
+            -
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            1
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            2
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)"
+            onkeydown="sombra(this)" onkeyup="sombra(this)">
+            3
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="operacion(this.innerText)">
+            +
+        </div>
+        <div class="boton infIzq" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="numero(this.innerText)">
+            0
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="operacion(this.innerText)">
+            .
+        </div>
+        <div class="boton" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="parentesis()">
+            ()
+        </div>
+        <div class="boton infDer" onmousedown="sombra(this)" onmouseup="sombra(this)" onclick="res()">
+            =
+        </div>
+        <div style="clear:both"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <script type="text/javascript">
+
+        let tramos = prompt("Dame la duracion de los tramos en minutos separados por espacio");
+
+        let arr = tramos.split(' ');
+
+        let minutos = 0;
+        parseInt(minutos);
+        for (let i = 0; i < arr.length; i++) {
+            minutos += parseInt(arr[i]);
+
+        }
+
+        let horas = 0
+        while (minutos > 59) {
+            horas++;
+            minutos -= 60;
+        }
+
+        if (minutos < 10) {
+            minutos = "0" + minutos
+        }
+        document.write("La duracion del viaje es: " + horas + ':' + minutos + " horas.");
+
+
+
+    </script>
+
+</head>
+
+<body style="background-color: lightblue;">
+
+</body>
+
+</html>

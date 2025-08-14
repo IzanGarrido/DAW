@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <script type="text/javascript">
+
+        let horas = prompt("Numero de horas a añadir");
+
+        let date = new Date();
+        let actual = date.getHours();
+
+        let futuro = parseInt(horas) + parseInt(actual)
+
+        while (futuro >= 23) {
+            futuro -= 24
+        }
+
+        console.log(futuro);
+
+    </script>
+
+</head>
+
+<body style="background-color: lightblue;">
+
+</body>
+
+</html>

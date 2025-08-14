@@ -1,0 +1,39 @@
+main {
+    grid-column: 1 / 5; /* El elemento 'main' ocupa desde la columna 1 hasta la columna 5 en un contenedor de grid. */
+}
+
+main h1 {
+    text-align: center; /* Centra horizontalmente el texto del encabezado 'h1' dentro de 'main'. */
+    margin: 20px; /* Agrega un margen de 20px alrededor del encabezado. */
+    font-size: 50px; /* Define un tamaño de fuente grande (50px) para el encabezado. */
+}
+
+section {
+    margin: 10px; /* Agrega un margen externo de 10px alrededor de cada 'section'. */
+}
+
+section h2 {
+    font-size: 30px; /* Define un tamaño de fuente de 30px para los encabezados 'h2' dentro de 'section'. */
+}
+
+section p {
+    margin-left: 20px; /* Desplaza los párrafos dentro de 'section' 20px hacia la derecha. */
+}
+
+section p a {
+    color: black; /* Cambia el color de los enlaces dentro de los párrafos de 'section' a negro. */
+}
+
+section ul li img {
+    height: 60px; /* Establece una altura fija de 60px para las imágenes dentro de los elementos 'li' de las listas. */
+    width: auto; /* Mantiene la proporción original de las imágenes ajustando automáticamente el ancho. */
+    margin-right: 10px; /* Agrega un espacio de 10px a la derecha de las imágenes. */
+}
+
+section ul li {
+    display: flex; /* Utiliza un layout flexible para alinear el contenido de los elementos 'li'. */
+    justify-content: left; /* Alinea horizontalmente el contenido de los 'li' a la izquierda. */
+    align-items: center; /* Centra verticalmente el contenido de los 'li'. */
+    margin: 10px; /* Agrega un margen externo de 10px alrededor de cada 'li'. */
+    padding: 10px; /* Agrega un relleno interno de 10px dentro de cada 'li'. */
+}

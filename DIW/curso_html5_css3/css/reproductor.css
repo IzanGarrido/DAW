@@ -1,0 +1,101 @@
+/* Media query para ancho máximo de 970px */
+@media (max-width: 970px) {
+    #botones input {
+        display: block; /* Mostrar como bloques en línea */
+    }
+}
+
+/* estilos para la barra de navegación y progreso */
+/*
+#barra {
+    width: 705px;
+    margin: 5px;
+    height: 16px;
+    padding: 2px;
+    /*border: 1px solid #CCCCCC;
+    background: #EEEEEE;
+
+}
+*/
+#barra {
+    width: 95%;
+    max-width: 705px;
+    margin: 0; /* Eliminar margen interno */
+}
+
+#progreso {
+    position: absolute;
+    width: 0px;
+    height: 16px;
+    background: rgba(0, 0, 150, .2);
+}
+
+#medio {
+    border-bottom: 10px solid gray;
+}
+
+/*#reproductor {
+    margin-top:  20px;
+    border: solid gray;
+    border-radius: 10px;
+    border-top: 10px solid gray;
+    border-inline: 15px solid gray;
+    border-bottom: 20px solid gray;
+}*/
+#reproductor {
+    display: inline-block;
+    /* Cambiar a bloque en línea */
+    width: 95%;
+    max-width: 720px;
+    margin: 20px auto;
+    /* Márgenes automáticos */
+}
+
+video {
+    width: 95%;
+    max-width: 720px;
+    height: auto;
+    /* Alto automático */
+    margin: 5px;
+    /* Márgenes externos */
+}
+
+/*#botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+
+}*/
+#botones {
+    display: inline-block;
+    /* Cambiar a bloque en línea */
+    vertical-align: top;
+    /* Alineación vertical arriba */
+}
+
+#botones * {
+    position: relative;
+    left: -50px;
+    margin-block: 5px;
+    width: 100px;
+    height: 30px;
+
+}
+
+#botones input {
+    background: red;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid gray;
+
+}
+
+#botones input:hover {
+    background: rgb(182, 10, 5);
+    border: 1px solid black;
+    cursor: pointer;
+
+}

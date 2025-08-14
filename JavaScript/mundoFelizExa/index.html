@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un mundo feliz</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./js/script.js"></script>
+</head>
+<body>  
+    <div class="caja-superior"> Nº Inicial
+        <div class="numero-superior"><input type="text" class="numero-superior" value="1" id="inicial" onchange="feliz()"></input></div>
+    </div>
+    <div class="caja-superior"> Cantidad
+        <div class="numero-superior"><input type="text" class="numero-superior" value="3" id="cantidad" onchange="feliz()"></div>
+    </div>
+    <div class="caja-superior"> Nº Clickado
+        <div class="numero-superior" id="clickado">10</div>
+    </div>
+    <div class="container" >
+        <div class="columna izquierda" id="izquierda">Número Feliz
+            <div class="numero" onclick="numclickado()" onmouseover="resalto()" onmouseout="quitarResalto()">1</div>
+            <div class="numero" onclick="numclickado()" onmouseover="resalto()" onmouseout="quitarResalto()">7</div>
+            <div class="numero" onclick="numclickado()" onmouseover="resalto()" onmouseout="quitarResalto()">10</div>
+        </div>
+        <div class="columna derecha" id="derecha"> Cantidad de números infelices (hasta encontrarlo)
+            <div class="numero" onclick="numclickado()" onmouseover="resalto()" onmouseout="quitarResalto()">0</div>
+            <div class="numero" onclick="numclickado()" onmouseover="resalto()" onmouseout="quitarResalto()">6</div>
+            <div class="numero" onclick="numclickado()" onmouseover="resalto()" onmouseout="quitarResalto()">3</div>
+        </div>
+    </div>
+</body>
+</html>

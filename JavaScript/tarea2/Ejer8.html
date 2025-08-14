@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+
+        function extraer(string, num, comienzo) {
+
+            switch (comienzo) {
+                case "principio":
+                    return string.substr(0,num)
+
+                    break;
+                case "fin":
+                    return string.substr(string.length-num,num)
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+        document.write("Resultado: " + extraer("Cristiano Ronaldo Apesta",4, "fin"))
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

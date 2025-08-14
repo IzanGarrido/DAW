@@ -1,0 +1,63 @@
+/* Estilos para pantallas pequeñas (max-width: 475px) */
+@media all and (max-width: 475px) {
+
+    /* Estilos para el contenedor principal (main) */
+    main {
+        grid-column: 1/5; /* El contenedor ocupa las columnas 1 a 5 */
+        grid-template-areas: 'title' /* Título en la parte superior */
+                            'texto' /* Texto en el medio */
+                            'video' !important; /* Video en la parte inferior */
+        grid-template-columns: 100% !important; /* Las columnas ocupan el 100% del ancho */
+        padding-right: 15px !important; /* Padding derecho */
+    }
+
+    /* Ocultar el aside en pantallas pequeñas */
+    aside {
+        display: none; /* No mostrar el aside */
+    }
+
+    /* Estilos para los videos dentro de figure */
+    figure video {
+        height: 100px !important; /* Establecer altura del video */
+        width: auto; /* Mantener la proporción del video */
+    }
+}
+
+/* Estilos generales para el contenedor principal (main) */
+main {
+    display: grid; /* Usar grid para el layout */
+
+    /* Definir las áreas de la cuadrícula */
+    grid-template-areas: 'title title' /* Título ocupa el espacio superior completo */
+                         'texto video' /* Texto y video en la segunda fila */
+                         'texto video'; /* Texto y video en la tercera fila */
+    
+    grid-template-columns: 50% 50%; /* Dividir el contenedor en dos columnas iguales */
+}
+
+/* Estilos para el encabezado h1 dentro de main */
+main h1 {
+    grid-area: title; /* Colocar el h1 en el área 'title' */
+}
+
+/* Añadir padding izquierdo al encabezado y al artículo */
+main h1, article {
+    padding-left: 40px; /* Espaciado a la izquierda */
+}
+
+/* Estilos para el artículo dentro de main */
+article {
+    grid-area: texto; /* Colocar el artículo en el área 'texto' */
+    padding-top: 30px; /* Espaciado superior */
+}
+
+/* Estilos para la etiqueta figure dentro de main */
+figure {
+    grid-area: video; /* Colocar figure en el área 'video' */
+}
+
+/* Estilos para los videos dentro de figure */
+figure video {
+    height: 250px; /* Altura del video */
+    width: auto; /* Mantener la proporción del video */
+}

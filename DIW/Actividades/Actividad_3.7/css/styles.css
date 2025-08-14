@@ -1,0 +1,94 @@
+/* Elimina todo el margen y padding predeterminado de todos los elementos */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Cambia el color del texto de todos los <li> dentro de las listas a azul */
+ul li {
+    color: blue;
+}
+
+/* Estilos para las listas <ul> principales */
+ul {
+    position: relative; /* Permite posicionar elementos hijos en relación a este elemento */
+    list-style-type: none; /* Elimina los marcadores de la lista por defecto (puntos o números) */
+    display: inline-block; /* Hace que las listas se comporten como elementos en línea pero mantienen características de bloque */
+    padding-block: 20px; /* Añade padding superior e inferior */
+    padding-inline: 0px; /* Elimina padding izquierdo y derecho */
+    margin-block: 0px; /* Elimina margen superior e inferior */
+    margin-inline: 80px; /* Añade margen izquierdo y derecho */
+}
+
+/* Estilos para sublistas <ul> dentro de un <li> */
+ul li ul {
+    position: absolute; /* Hace que esta sublista se posicione de forma absoluta dentro del <li> */
+    z-index: 2; /* Asegura que la sublista esté por encima de otros elementos */
+    width: 100px; /* Ancho de la sublista */
+    text-align: center; /* Alinea el texto al centro */
+    left: 50%; /* Posiciona la sublista al 50% desde el lado izquierdo del <li> padre */
+    margin-left: -50px; /* Centra la sublista horizontalmente sobre el <li> padre */
+    top: 25px; /* Desplaza la sublista 25px hacia abajo desde el <li> padre */
+    font-family: Verdana; /* Aplica la fuente Verdana al texto de la sublista */
+    font-size: 0.7em; /* Reduce el tamaño de la fuente */
+}
+
+/* Oculta los elementos <li> dentro de las sublistas (<ul>) al principio */
+ul li ul li {
+    max-height: 0px; /* Oculta el contenido ajustando su altura a 0 */
+    overflow: hidden; /* Oculta el contenido sobrante */
+}
+
+/* Muestra los elementos <li> dentro de una sublista cuando el <li> principal es hovered */
+ul li:hover > ul li {
+    max-height: 150px; /* Ajusta la altura a 150px al hacer hover */
+    overflow: visible; /* Hace visible el contenido que estaba oculto */
+    transition: .4s linear; /* Transición suave en 0.4 segundos */
+}
+
+/* Aplica estilos adicionales al <li> hijo cuando el padre es hovered */
+ul li:hover > ul li {
+    padding: 12px; /* Añade padding interno */
+    background-color: #444; /* Cambia el fondo a un color gris oscuro */
+}
+
+/* Cambia el color de fondo para cada <li> hijo en orden (aunque el selector está incompleto) */
+ul li:hover > ul li:nth-child() {
+    background-color: #363636; /* Fondo más oscuro para los elementos de la lista */
+}
+
+/* Cambia el color de fondo del <li> hijo cuando es hovered */
+ul li:hover > ul li:hover {
+    background-color: #313131; /* Fondo aún más oscuro cuando se hace hover sobre un subelemento */
+}
+
+/* Aplica bordes redondeados al primer <li> de la sublista */
+ul li:hover ul li:first-child {
+    position: relative; /* Posiciona el elemento de forma relativa */
+    border-radius: 3px 3px 0px 0px; /* Bordes redondeados solo en las esquinas superiores */
+}
+
+/* Aplica bordes redondeados al último <li> de la sublista */
+ul li:hover ul li:last-child {
+    position: relative; /* Posiciona el elemento de forma relativa */
+    border-radius: 0px 0px 3px 3px; /* Bordes redondeados solo en las esquinas inferiores */
+}
+
+/* Estilos para los enlaces dentro de los <li> de las sublistas */
+ul li ul li a {
+    color: aliceblue; /* Color del texto blanco */
+    text-decoration-line: none; /* Elimina el subrayado del enlace */
+}
+
+/* Estilos para la flecha que aparece encima del primer <li> cuando la sublista es hover */
+nav li ul:hover li:first-child:before {
+    content: ' '; /* Añade contenido vacío (para crear la flecha) */
+    position: absolute; /* Posiciona el pseudo-elemento absolutamente */
+    width: 1px; /* Ancho de la flecha */
+    height: 1px; /* Altura de la flecha */
+    border: 5px solid transparent; /* Crea una flecha usando bordes */
+    border-bottom-color: #313131; /* Color de la parte inferior de la flecha */
+    left: 50%; /* Centra la flecha horizontalmente */
+    top: -10px; /* Coloca la flecha justo encima del primer <li> */
+    margin-left: -5px; /* Ajusta el margen izquierdo para centrar perfectamente la flecha */
+}

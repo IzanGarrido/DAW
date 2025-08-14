@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Brawl Stars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultados {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 200px;
+            overflow: auto;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .tab {
+            padding: 8px 16px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>API de Brawl Stars</h1>
+    
+    <div class="tabs">
+        <div class="tab active" data-tab="jugador">Jugador</div>
+        <div class="tab" data-tab="batallas">Batallas</div>
+        <div class="tab" data-tab="club">Club</div>
+        <div class="tab" data-tab="brawlers">Brawlers</div>
+        <div class="tab" data-tab="ranking">Ranking</div>
+    </div>
+    
+    <div id="jugador-tab" class="tab-content">
+        <div class="form-group">
+            <label for="jugador-tag">Tag de Jugador:</label>
+            <input type="text" id="jugador-tag" placeholder="Ej: GGJL989L (sin #)">
+            <button id="buscar-jugador">Buscar</button>
+        </div>
+    </div>
+    
+    <div id="batallas-tab" class="tab-content" style="display: none;">
+        <div class="form-group">
+            <label for="batallas-tag">Tag de Jugador:</label>
+            <input type="text" id="batallas-tag" placeholder="Ej: GGJL989L (sin #)">
+            <button id="buscar-batallas">Buscar</button>
+        </div>
+    </div>
+    
+    <div id="club-tab" class="tab-content" style="display: none;">
+        <div class="form-group">
+            <label for="club-tag">Tag de Club:</label>
+            <input type="text" id="club-tag" placeholder="Ej: 2JPGC98 (sin #)">
+            <button id="buscar-club">Buscar</button>
+        </div>
+    </div>
+    
+    <div id="brawlers-tab" class="tab-content" style="display: none;">
+        <div class="form-group">
+            <button id="buscar-brawlers">Obtener Brawlers</button>
+        </div>
+    </div>
+    
+    <div id="ranking-tab" class="tab-content" style="display: none;">
+        <div class="form-group">
+            <p>Ranking de jugadores por copas:</p>
+            <button id="procesar-jugadores">Procesar Todos los Jugadores</button>
+        </div>
+    </div>
+    
+    <h2>Resultados:</h2>
+    <div id="resultados">Los resultados se mostrarán aquí...</div>
+    
+    <script>
+        // Cambio de pestañas
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).style.display = 'block';
+            });
+        });
+        
+        // Mostrar resultados
+        function mostrarResultados(datos) {
+            const resultadosDiv = document.getElementById('resultados');
+            resultadosDiv.textContent = JSON.stringify(datos, null, 2);
+        }
+        
+        // Buscar jugador
+        document.getElementById('buscar-jugador').addEventListener('click', async () => {
+            const tagJugador = document.getElementById('jugador-tag').value.trim();
+            if (!tagJugador) {
+                alert('Por favor, ingresa un tag de jugador válido');
+                return;
+            }
+            
+            try {
+                const jugador = await obtenerJugador(tagJugador);
+                mostrarResultados(jugador);
+            } catch (error) {
+                mostrarResultados({ error: error.message });
+            }
+        });
+        
+        // Buscar batallas
+        document.getElementById('buscar-batallas').addEventListener('click', async () => {
+            const tagJugador = document.getElementById('batallas-tag').value.trim();
+            if (!tagJugador) {
+                alert('Por favor, ingresa un tag de jugador válido');
+                return;
+            }
+            
+            try {
+                const batallas = await obtenerBatallas(tagJugador);
+                mostrarResultados(batallas);
+            } catch (error) {
+                mostrarResultados({ error: error.message });
+            }
+        });
+        
+        // Buscar club
+        document.getElementById('buscar-club').addEventListener('click', async () => {
+            const tagClub = document.getElementById('club-tag').value.trim();
+            if (!tagClub) {
+                alert('Por favor, ingresa un tag de club válido');
+                return;
+            }
+            
+            try {
+                const club = await obtenerClub(tagClub);
+                mostrarResultados(club);
+            } catch (error) {
+                mostrarResultados({ error: error.message });
+            }
+        });
+        
+        // Buscar brawlers
+        document.getElementById('buscar-brawlers').addEventListener('click', async () => {
+            try {
+                const brawlers = await obtenerBrawlers();
+                mostrarResultados(brawlers);
+            } catch (error) {
+                mostrarResultados({ error: error.message });
+            }
+        });
+    </script>
+    
+    <script src="main.js"></script>
+    <script src="tags-processor.js"></script>
+</body>
+</html>

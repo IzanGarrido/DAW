@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <script type="text/javascript">
+
+        let media = 0;
+        let notas = prompt("Dame las notas separadas por coma.");
+        let arr = notas.split(",");
+        for (nota in arr) {
+            let a = parseInt(nota);
+            media += a;
+        }
+        console.log(media / arr.length + 1);
+
+    </script>
+
+</head>
+
+<body style="background-color: lightblue;">
+
+</body>
+
+</html>
